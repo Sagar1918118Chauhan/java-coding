@@ -1,0 +1,48 @@
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Enter the size of an array:");
+        Scanner r=new Scanner(System.in);
+        int size=r.nextInt();
+        int i;
+
+        int a[]=new int[size];
+        System.out.println("Enter the element of an array:");
+        for(i=0;i<size;i++)
+        {
+            a[i]=r.nextInt();
+        }
+
+        System.out.println("\nBefore deletion Array is:");
+        for(i=0;i<size;i++)
+        {
+            System.out.println(a[i]);
+        }
+
+        int count=0;
+        System.out.println("\nEnter the delete location:");
+        int delloc=r.nextInt();
+         
+          
+        if(delloc < 0 || delloc >= size)
+        {
+            System.out.println("Invalid location chice:");
+        }
+        else
+        {    
+            System.out.println("\nDelete loc :"+delloc+" successfully:");
+            for(i=delloc;i<size-1;i++)
+            {
+                a[i]=a[i+1];
+            }
+          
+        }
+        size--;
+        System.out.println("\nAfter deletion Array is:");
+        for(i=0;i<size;i++)
+        {
+            System.out.println(a[i]);
+        }
+    }
+}
