@@ -1,0 +1,42 @@
+ 
+abstract class Animal{
+    
+     Animal()
+     {
+        System.out.println("Animal\n");
+     }
+    public abstract void m2();
+
+}
+class Dog extends Animal{
+     Dog()
+     {
+       super();
+     }
+   public   void m2()
+    {
+        System.out.println(" Dog is barking" );
+    }
+}
+class Lion extends Animal{
+    Lion()
+    {
+      super();
+    }
+  public   void m2()
+   {
+       System.out.println(" lion is roar" );
+   }
+}
+class HeloWorld
+{
+    public static void main(String args[])
+    {
+       Dog r=new Dog();
+       
+        r.m2();
+      Lion r2=new Lion();
+      
+         r2.m2();
+    }
+}
