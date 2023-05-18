@@ -1,0 +1,131 @@
+class Account {
+   private  String accountType;
+   private String accountNumber;
+   private double minimumBalance;
+   private double currentBalance;
+
+    public Account(String accountType, String accountNumber, double minimumBalance, double currentBalance) {
+        this.accountType = accountType;
+        this.accountNumber = accountNumber;
+        this.minimumBalance = minimumBalance;
+        this.currentBalance = currentBalance;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public double getMinimumBalance() {
+        return minimumBalance;
+    }
+
+    public void setMinimumBalance(double minimumBalance) {
+        this.minimumBalance = minimumBalance;
+    }
+
+    public double getCurrentBalance() {
+        return currentBalance;
+    }
+
+    public void setCurrentBalance(double currentBalance) {
+        this.currentBalance = currentBalance;
+    }
+
+    public void calInterest() {
+        // Perform interest calculation logic here
+    }
+}
+
+class FixedDepositAccount extends Account {
+    private int tenure;
+
+    public FixedDepositAccount(String accountType, String accountNumber, double minimumBalance, double currentBalance, int tenure) {
+        super(accountType, accountNumber, minimumBalance, currentBalance);
+        this.tenure = tenure;
+    }
+
+    public int getTenure() {
+        return tenure;
+    }
+
+    public void setTenure(int tenure) {
+        this.tenure = tenure;
+    }
+}
+
+class CurrAccount extends Account {
+    private double overdraftLimit;
+
+    public CurrAccount(String accountType, String accountNumber, double minimumBalance, double currentBalance, double overdraftLimit) {
+        super(accountType, accountNumber, minimumBalance, currentBalance);
+        this.overdraftLimit = overdraftLimit;
+    }
+
+    public double getOverdraftLimit() {
+        return overdraftLimit;
+    }
+
+    public void setOverdraftLimit(double overdraftLimit) {
+        this.overdraftLimit = overdraftLimit;
+    }
+}
+
+class Customer {
+    private String name;
+    private Account account;
+
+    public Customer(String name, Account account) {
+        this.name = name;
+        this.account = account;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an instance of FixedDepositAccount
+        FixedDepositAccount fixedDepositAccount = new FixedDepositAccount("Fixed Deposit", "FD123", 1000.0, 5000.0, 12);
+
+        // Creating an instance of CurrAccount
+        CurrAccount currentAccount = new CurrAccount("Current Account", "CA456", 500.0, 1000.0, 2000.0);
+
+        // Creating an instance of Customer and associating the account
+        Customer customer = new Customer("Sagar chauhan", fixedDepositAccount);
+
+        // Accessing account details using Customer class
+        System.out.println(customer.getName());                       // Output: John Doe
+        System.out.println(customer.getAccount().getAccountType());   // Output: Fixed Deposit
+        System.out.println(customer.getAccount().getCurrentBalance()); // Output: 5000.0
+        
+        // Updating account details using Customer
+        customer.getAccount().setCurrentBalance(6000.0);
+        System.out.println(customer.getAccount().getCurrentBalance()); // Output: 6000.0
+    }
+}
