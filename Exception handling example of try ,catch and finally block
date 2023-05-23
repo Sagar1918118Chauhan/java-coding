@@ -1,0 +1,53 @@
+ 
+
+class ExceptionHandling {
+    public static void main(String[] args) {
+        try
+        {
+            int a=10,b=2,c;
+            c=a/b;
+            System.out.println(c);
+            
+            
+            String name="sagar";
+             System.out.println(name.toUpperCase());
+             
+             
+             
+             int arr[] = {1,2,3,4,5,6};  
+             arr[7]=6;
+            
+        }
+        catch(ArithmeticException e)
+        {
+             System.out.println("Arithmatic Exception");
+        }
+        
+         catch( NullPointerException e)
+        {
+             System.out.println("NullPointerException");
+        }
+        catch(Exception a)
+        {
+             System.out.println(a);
+        }
+        finally
+        {
+                System.out.println("\nfinally");
+        }
+        System.out.println("\nHello, World!");
+    }
+}
+
+
+
+
+OUTPUT:
+               
+5
+SAGAR
+java.lang.ArrayIndexOutOfBoundsException: Index 7 out of bounds for length 6
+
+finally
+
+Hello, World!
