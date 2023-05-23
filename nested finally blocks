@@ -1,0 +1,42 @@
+ 
+
+class NestedFinallyblocks{
+    public static void main(String[] args) {
+        try
+        {
+            int a=10,b=0,c;
+            c=a/b;
+            System.out.println(c);//s 1
+
+            
+        }
+        catch(ArithmeticException e)
+        {
+             System.out.println("Arithmatic Exception\n");//s2
+        }
+        
+       
+       
+        finally
+        {
+                System.out.println("\nfinally");//s3
+                try
+                {
+                       String name=null;
+                    System.out.println(name.toUpperCase());//s4
+             
+                }
+               
+           catch( NullPointerException e)
+                 {
+             System.out.println("NullPointerException");//s5
+                  }
+                
+                finally
+                {
+                       System.out.println("call the finnaly");//s6
+                }
+        }
+        System.out.println("\nHello, World!");//s7
+    }
+}
