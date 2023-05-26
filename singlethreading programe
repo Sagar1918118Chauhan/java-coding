@@ -1,0 +1,49 @@
+ 
+//slow execute as compare multithreading
+class A extends Thread {
+   
+    public void fun()
+    {
+        
+    
+    try
+    {
+       {  for(int i=1;i<=5;i++)
+      {
+         System.out.println("A");
+         Thread.sleep(1000);
+      }
+       
+      } 
+    }
+    catch(InterruptedException e)
+    {
+        System.out.println(e);
+    }
+    }
+   
+    public static void main(String[] args) throws InterruptedException{
+        A t=new A();
+        t.fun();
+        for(int i=1;i<=5;i++)
+      {
+         System.out.println("B");
+         Thread.sleep(1000);
+        
+      }
+               
+    }
+}   
+
+OUTPUT:
+ 
+A
+A
+A
+A
+A
+B
+B
+B
+B 
+B
