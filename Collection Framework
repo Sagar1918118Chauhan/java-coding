@@ -1,0 +1,30 @@
+ /*
+Array operation perform by using java Collection framework
+ 1.Insertion 
+ 2.Deletion
+ 3.Replace
+**/
+import java.util.ArrayList;
+class javaCollection {
+    public static void main(String[] args) {
+        ArrayList<String> Name=new ArrayList<String>();
+        Name.add("sagar");//initialize the  value in string variable(Name)
+        Name.add("sunny");
+        Name.add("Ujala");
+        Name.add("Rakesh");
+        System.out.print(Name);
+        Name.add(0,"Arti");//insert element on first position
+        System.out.print("\n "+Name);
+         Name.add(2,"Guddan");//insert element on third position
+
+        System.out.print("\n"+Name);
+         Name.set(0,"Chauhan");//it`s method used for replace the element to another element 
+          System.out.print("\n"+Name);
+          Name.remove(2);//this method is used for delete any element from array by using index number
+          System.out.print("\n"+Name);
+      
+        
+        
+     
+    }
+}
