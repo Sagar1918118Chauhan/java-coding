@@ -1,0 +1,51 @@
+/*
+LinkedList operation perform by using java Collection framework
+ 1.Insertion 
+ 2.Deletion
+ 3.Repalce
+ 4.Creating
+ 5.Traverse
+**/
+import java.util.LinkedList;
+class javaCollection {
+    public static void main(String[] args) {
+        LinkedList<String> Name=new LinkedList<String>();
+        System.out.print(" initialize the  value in string variable(Name)");
+        Name.add("sagar");
+        Name.add("sunny");
+        Name.add("Ujala");
+        Name.add("Rakesh");
+        System.out.print(Name);
+        System.out.print("//insert element on first position ");
+        Name.add(0,"Arti"); 
+        System.out.print("\n "+Name);
+          System.out.println("addFirt() also used for insert element on first position in Linked list");
+          Name.addFirst("killer");
+          System.out.print("\n"+Name);
+
+
+          System.out.println(" //to add element in last position in linked list in linked list");
+          Name.addLast("jaat");
+          System.out.print("\n"+Name);
+
+
+
+         Name.add(2,"Guddan");//insert element on third position
+
+        System.out.print("\n"+Name);
+         Name.set(0,"Chauhan");//it`s method used for replace the element to another element 
+          System.out.print("\n"+Name);
+
+          Name.remove(2);//this method is used for delete any element from linkedlist by using index number
+          System.out.print("\n"+Name);
+          Name.remove(0);
+          System.out.print("\n"+Name);//Both  remove(0) and remove() are used for deletion first element
+          Name.remove();
+          System.out.print("\n"+Name);
+
+      
+        
+        
+     
+    }
+}
